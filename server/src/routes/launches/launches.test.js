@@ -25,20 +25,20 @@ describe('Launches integration tests', () => {
     const completeLaunchData = {
       mission: 'USS Enterprise',
       rocket: 'NCC 1701-D',
-      target: 'Kepler-186 f',
+      target: 'Kepler-1410 b',
       launchDate: 'January 4, 2028'
     }
   
     const completeLaunchWithoutDate = {
       mission: 'USS Enterprise',
       rocket: 'NCC 1701-D',
-      target: 'Kepler-186 f',
+      target: 'Kepler-1410 b',
     }
   
     const completeLaunchErrorDate = {
       mission: 'USS Enterprise',
       rocket: 'NCC 1701-D',
-      target: 'Kepler-186 f',
+      target: 'Kepler-1410 b',
       launchDate: 'xzmcnxz,mnds'
     }
   
@@ -47,7 +47,8 @@ describe('Launches integration tests', () => {
       const response = await request(app).post('/v1/launches')
         .send(completeLaunchData)
         .expect(201)
-        .expect('Content-Type', /json/)
+        .expect('Content-Type', /json/);
+      console.log(completeLaunchData);
   
       const dateSend = new Date(completeLaunchData.launchDate).valueOf();
       const dateReceive = new Date(response.body.launchDate).valueOf();

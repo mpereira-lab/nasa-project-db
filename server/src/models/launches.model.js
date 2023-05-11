@@ -45,7 +45,7 @@ async function addDbLaunch(launch){
 
     const planet = await planetsDb.findOne({
         keplerName: launch.target
-    })
+    });
 
     if (!planet){
         throw new Error('No matching planet found');

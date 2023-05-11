@@ -4,7 +4,7 @@
   "description": "Nasa",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles",
+    "test": "jest --detectOpenHandles --forceExit",
     "test-w": "jest --watchAll",
     "w": "set PORT=5000 && nodemon src/server.js",
     "start": "set PORT=5000 && node src/server.js"
