@@ -1,4 +1,4 @@
-const { getAllLaunches, addDbLaunch, hasLaunch, abortLaunch } = require('../../models/launches.model');
+const { getAllLaunches, addDbLaunch, existLaunchWithId, abortLaunch } = require('../../models/launches.model');
 
 const { getPagination } = require('../../services/query')
 
@@ -27,7 +27,7 @@ async function httpAddLaunch(req, resp) {
 async function httpAbortLaunch(req, resp) {
     
     const launchId = Number(req.params.id);
-    const exist = await hasLaunch(launchId)
+    const exist = await existLaunchWithId(launchId)
     console.log(exist)
     if (!exist) {
         return resp.status(400).json({

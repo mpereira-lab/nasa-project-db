@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors({
     origin: 'http://localhost:5000'
+    // origin: 'http://15.228.246.87:5000'
 }));
 //log (luego de la seguridad)
 app.use(morgan('combined'));
