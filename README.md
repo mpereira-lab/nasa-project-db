@@ -11,3 +11,4 @@ winpty  ssh -i "nasa-project-key-pair.pem" ec2-user@ec2-15-228-246-87.sa-east-1.
 
 * item 1
 * ítem 2
+* [] check
